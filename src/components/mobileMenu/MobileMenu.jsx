@@ -1,22 +1,58 @@
 import { 
+    Box,
     Image, 
     Grid,
     Menu,
     MenuButton,
     MenuList,
-    MenuItem
+    MenuItem,
+    Flex, 
+    Divider
  } from "@chakra-ui/react";
 
  import Hamburger from "../../assets/icon-hamburger.svg";
+ import ChevronIcon from "../../assets/icon-chevron.svg"
 
 function MobileMenu() {
 
-    const planetNames = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+    const planetNames = [
+        {
+            name: 'Mercury',
+            color: 'hsl(240, 6%, 54%)'
+        },
+        {
+            name: 'Venus',
+            color: 'hsl(33, 82%, 61%)'
+        },
+        {
+            name: 'Earth',
+            color: 'hsl(263, 67%, 51%)'
+        },
+        {
+            name: 'Mars',
+            color: 'hsl(10, 63%, 51%)'
+        },
+        {
+            name: 'Jupiter',
+            color: 'hsl(2, 68%, 53%)'
+        },
+        {
+            name: 'Saturn',
+            color: 'hsl(17, 73%, 46%)'
+        },
+        {
+            name: 'Uranus',
+            color: 'hsl(169, 73%, 44%)'
+        },
+        {
+            name: 'Neptune',
+            color: 'hsl(222, 87%, 56%)'
+        }
+
+    ]
 
   return (
     <Grid
-        // border="1px"
-        borderColor="black.100"
         direction="column"
         alignItems="center"
       >
@@ -29,20 +65,54 @@ function MobileMenu() {
             h='100vh' 
             w='100vw'  
             bgColor='hsl(240, 67%, 8%)'
+            // border='2px'
+            // borderColor='red.600'
             border='none'
         >
         {
-            planetNames.map((planet) => <MenuItem p='1rem' >{planet}</MenuItem>)
-        }
-            {
-            //     <MenuItem p='1rem' >Mercury</MenuItem>
-            // <MenuItem p='1rem' >Venus</MenuItem>
-            // <MenuItem p='1rem' >Earth</MenuItem>
-            // <MenuItem p='1rem' >Mars</MenuItem>
-            // <MenuItem p='1rem' >Jupiter</MenuItem>
-            // <MenuItem p='1rem' >Saturn</MenuItem>
-            // <MenuItem p='1rem' >Uranus</MenuItem>
-            // <MenuItem p='1rem' >Neptune</MenuItem>
+            planetNames.map((planet) => (
+                <Box>
+                    <MenuItem 
+                        // border='none'
+                        // borderColor='blue'
+                        // borderBottom='2px solid hsl(240, 17%, 26%)'
+                        // borderBottomWidth='80%'
+                    >
+                        <Flex 
+                            flex='1'
+                            justify='Space-between'
+                            marginRight='0.75rem'
+                            // border='1px'
+                        >
+                            <Flex  >
+                                <Grid 
+                                    bgColor={planet.color}
+                                    mx='0.5rem'
+                                    my='1rem'
+                                    h='1rem'
+                                    px='0.5rem'
+                                    borderRadius='full'
+                                ></Grid>
+                                <MenuItem>{planet.name}</MenuItem>
+                            </Flex>
+                            <Image 
+                                mt='1rem'
+                                boxSize='0.75rem'
+                                src={ChevronIcon} 
+                                alt='Chevon Icon'
+                            />
+                        </Flex>
+                        
+                    </MenuItem>
+                    <Divider  
+                        w='90%'
+                        m='auto' 
+                        color='hsl(240, 17%, 26%)'
+                    />
+                </Box>
+                
+                )
+            )
         }
           </MenuList>
         </Menu>
