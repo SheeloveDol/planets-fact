@@ -1,7 +1,7 @@
-import { Box, Divider } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import NavBar from './components/navbar/NavBar';
 import Background from './assets/background-stars.svg'
-import './App.css';
+// import './App.css';
 
 function App() {
   return (
