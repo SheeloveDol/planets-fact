@@ -11,10 +11,10 @@ import {
   Divider,
 } from "@chakra-ui/react";
 
-import planetNames from "../../planetsNames/planetNames";
+import planetNames from "../../../planetsNames/planetNames";
 
-import Hamburger from "../../assets/icon-hamburger.svg";
-import ChevronIcon from "../../assets/icon-chevron.svg";
+import Hamburger from "../../../assets/icon-hamburger.svg";
+import ChevronIcon from "../../../assets/icon-chevron.svg";
 
 function MobileMenu() {
   

@@ -5,7 +5,7 @@ import {
   
  } from "@chakra-ui/react";
 
- import MobileMenu from "../mobileMenu/MobileMenu";
+ import MobileMenu from "../menus/mobileMenu/MobileMenu";
 
 
 const NavBar = () => {
